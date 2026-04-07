@@ -1,3 +1,4 @@
+print("MAIN FILE LOADED 123")
 from fastapi import FastAPI
 from app.routes import auth, tasks
 
