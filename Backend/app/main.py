@@ -1,7 +1,3 @@
-@app.get("/test123")
-def test():
-    return {"msg": "TEST OK"}
-print("MAIN FILE LOADED 123")
 from fastapi import FastAPI
 from app.routes import auth, tasks
 
@@ -14,6 +10,10 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "healthy"}
+
+@app.get("/test123")
+def test():
+    return {"msg": "TEST OK"}
 
 app.include_router(auth.router, prefix="/auth", tags=["auth"])
 app.include_router(tasks.router, prefix="/tasks", tags=["tasks"])
